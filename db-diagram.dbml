@@ -1,0 +1,16 @@
+Table events {
+  id serial [pk, increment]
+  time_start timestamp
+  time_end timestamp
+}
+
+Table activity {
+  id serial [pk, increment]
+  title varchar(50)
+}
+
+Table events_activity {
+  id serial [pk, increment]
+  events_id integer [ref: > events.id]
+  activity_id integer [ref: > activity.id]
+}
